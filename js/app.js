@@ -121,7 +121,7 @@ function render(id, keepScroll) {
   li.querySelectorAll('pre[data-lang]').forEach(highlight);
   li.querySelectorAll('.viz[data-viz]').forEach(v => { try { VIZ[v.dataset.viz] && VIZ[v.dataset.viz](v); } catch (e) { console.error(e); } });
   if (L) store.set('last', id);
-  try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  try { history.replaceState(null, '', location.pathname + (id === 'inicio' ? '' : '#' + id)); } catch (e) {}   // URL limpa: sem ?lang= e sem #inicio
   if (!keepScroll) $('#lesson').scrollTop = 0;
   renderSide();
 }
