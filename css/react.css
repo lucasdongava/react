@@ -1,0 +1,31 @@
+/* Trilha React — ajustes sobre o tema base */
+:root{--u4:#d02670}
+:root[data-theme="dark"]{--u4:#ee5396}
+.lesson h2{scroll-margin-top:16px}
+.lesson hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.lesson a{color:var(--acc)}
+.lesson table code{white-space:nowrap}
+.lesson .note{display:block}
+.lesson .note p{margin:0 0 4px}
+.snip pre code{font-family:'JetBrains Mono',ui-monospace,monospace;background:none;border:0;padding:0}
+.snip pre i{font-style:normal}
+.snip pre .c{color:var(--code-mute)}
+.snip pre .s{color:#198038}
+.snip pre .k{color:#8a3ffc}
+.snip pre .n{color:#0072c3}
+.snip pre .f{color:#d02670}
+:root[data-theme="dark"] .snip pre .s{color:#42be65}
+:root[data-theme="dark"] .snip pre .k{color:#be95ff}
+:root[data-theme="dark"] .snip pre .n{color:#33b1ff}
+:root[data-theme="dark"] .snip pre .f{color:#ff7eb6}
+/* respostas dos exercícios */
+details.ans{border:1px solid var(--line);border-radius:12px;margin:8px 0 18px;background:var(--panel)}
+details.ans>summary{cursor:pointer;list-style:none;padding:11px 16px;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details.ans>summary::-webkit-details-marker{display:none}
+details.ans>summary::after{content:"+";font-size:18px;color:var(--fg3);transition:transform .25s}
+details.ans[open]>summary::after{transform:rotate(45deg)}
+details.ans>:not(summary){margin-left:16px;margin-right:16px}
+details.ans>:last-child{margin-bottom:14px}
+.rs-body{padding:0 16px 14px}
+.rs-body .btn{margin-top:6px}
+.rs-card.ans>summary{padding:14px 16px}
