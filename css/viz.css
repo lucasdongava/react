@@ -1,0 +1,106 @@
+/* Trilha React — ilustrações interativas */
+.viz{align-items:stretch}
+.vsub{margin:0;color:var(--fg2);font-size:14px;max-width:62ch}
+.vbody{display:flex;flex-direction:column;gap:12px}
+.vrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.vchk{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--fg2);cursor:pointer}
+.vchk.off{opacity:.45}
+.vchk input{accent-color:var(--acc);width:16px;height:16px}
+.vseg{display:flex;flex-wrap:wrap;gap:4px;padding:3px;border-radius:11px;background:var(--panel2);align-self:flex-start}
+.vseg button{border:0;background:transparent;border-radius:8px;padding:6px 12px;font:500 12.5px 'Geist Mono',monospace;color:var(--fg2);transition:background .25s,color .25s}
+.vseg button.on{background:var(--bg);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.vmsg{margin:0;padding:10px 12px;border-radius:10px;background:var(--panel2);font-size:13.5px;color:var(--fg2);animation:vfade .45s both}
+.vmsg.good{background:var(--ok-s);color:var(--fg)}
+.vmsg.bad{background:var(--warn-s);color:var(--fg)}
+@keyframes vfade{from{opacity:0;transform:translateY(4px)}}
+.vcode{margin:0;padding:12px 14px;border-radius:10px;background:var(--code-bg);border:1px solid var(--code-line);color:var(--code-fg);font:12.5px/1.6 'JetBrains Mono',monospace;overflow-x:auto;white-space:pre}
+.vcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.vcard{padding:12px;border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;gap:4px;font-size:13.5px;background:var(--bg);transition:border-color .3s,background .3s}
+.vcard small{color:var(--fg3);font:500 11.5px 'Geist Mono',monospace}
+.vcard .big{font-size:30px;font-weight:500;letter-spacing:-.03em;line-height:1.1}
+.vcard code{font-size:12px;word-break:break-word}
+.vcard.live{border-color:var(--acc);background:var(--acc-s)}
+.vcard.skip{border-color:var(--ok);background:var(--ok-s)}
+/* árvore */
+.vtree{display:flex;flex-direction:column;gap:6px}
+.vnode{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:13px;text-align:left;width:100%;transition:border-color .3s,background .3s}
+.vnode.d1{margin-left:22px;width:calc(100% - 22px)}
+.vnode.d2{margin-left:44px;width:calc(100% - 44px)}
+.vnode .nm{font:500 13px 'JetBrains Mono',monospace;flex:1}
+.vnode .cnt{font:500 11.5px 'Geist Mono',monospace;color:var(--fg3)}
+.vnode.hit{border-color:var(--acc);background:var(--acc-s);animation:vpulse .7s both}
+@keyframes vpulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc) 45%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+.vdom{font:500 11.5px 'Geist Mono',monospace;padding:2px 8px;border-radius:99px;background:var(--panel2);color:var(--fg2)}
+.vdom.ch{background:var(--fg);color:var(--bg)}
+button.vnode{cursor:pointer}
+button.vnode:hover{border-color:var(--fg3)}
+.vnode.client{background:var(--acc-s);border-color:var(--acc)}
+.vnode.marked{box-shadow:inset 3px 0 0 var(--acc)}
+.vtag{font:500 11px 'Geist Mono',monospace;padding:2px 8px;border-radius:99px;background:var(--panel2);color:var(--fg2)}
+.vnode.client .vtag{background:var(--acc);color:var(--acc-fg)}
+/* listas e logs */
+.vlist,.vmsgs,.vprops,.vlog,.vqueue{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.vlist li,.vmsgs li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:14px}
+.vlist label{display:flex;align-items:center;gap:9px;cursor:pointer}
+.vlist input{accent-color:var(--acc);width:16px;height:16px}
+.vlist small,.vmsgs small{font:500 11.5px 'Geist Mono',monospace;color:var(--fg3)}
+.vmsgs li.sending{opacity:.55;border-style:dashed}
+.vmsgs li.failed{border-color:var(--o-err);color:var(--o-err)}
+.vmsgs li.ok{border-color:var(--ok)}
+.ghost{color:var(--fg3);font-size:13.5px;padding:10px 12px;border:1px dashed var(--line);border-radius:10px}
+.vqueue li:not(.ghost){display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:9px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:13.5px;animation:vfade .45s both}
+.vqueue code{font:500 12.5px 'JetBrains Mono',monospace}
+.vqueue span{color:var(--fg2)}
+.vlog li:not(.ghost){display:flex;gap:10px;align-items:baseline;padding:7px 12px;border-radius:9px;font:13px 'JetBrains Mono',monospace;background:var(--panel2);animation:vfade .35s both}
+.vlog li i{font:500 11px 'Geist Mono',monospace;font-style:normal;min-width:58px;color:var(--fg3)}
+.vlog .k-c{background:var(--warn-s)}
+.vlog .k-e{background:var(--ok-s)}
+.vlog .k-n{background:transparent;color:var(--fg2);font-family:inherit}
+.vprops li{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:9px 12px;border-radius:10px;font-size:13px;border:1px solid var(--line)}
+.vprops li.ok{background:var(--ok-s);border-color:transparent}
+.vprops li.no{background:var(--warn-s);border-color:transparent}
+/* fluxo, suspense, transições */
+.vflow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font:500 12px 'Geist Mono',monospace}
+.vflow span{padding:6px 10px;border-radius:99px;background:var(--panel2);color:var(--fg2)}
+.vflow span.step{animation:vstep .9s both}
+.vflow i{font-style:normal;color:var(--fg3)}
+@keyframes vstep{0%{background:var(--panel2);color:var(--fg2)}30%{background:var(--acc);color:var(--acc-fg)}100%{background:var(--acc-s);color:var(--fg)}}
+.vbound{border:1.5px dashed var(--acc);border-radius:12px;padding:10px}
+.vskel{display:flex;flex-direction:column;gap:7px;padding:12px;border-radius:10px;background:var(--panel2)}
+.vskel i{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--line),var(--bg),var(--line));background-size:200% 100%;animation:vshim 1.4s linear infinite}
+.vskel i+i{width:60%}
+.vskel small{color:var(--fg3);font:500 11.5px 'Geist Mono',monospace}
+.vskel.big{padding:22px}
+@keyframes vshim{to{background-position:-200% 0}}
+.vdata{padding:12px;border-radius:10px;background:var(--ok-s);display:flex;flex-direction:column;animation:vfade .45s both}
+.vdata small{color:var(--fg2)}
+.vtl{display:flex;flex-direction:column;gap:8px}
+.vlane{position:relative;height:38px;border-radius:10px;background:var(--panel2);overflow:hidden}
+.vbar{position:absolute;top:6px;bottom:6px;border-radius:6px;opacity:0;animation:vgrow .5s both;transform-origin:left}
+.vbar:nth-child(2){animation-delay:.1s}
+.vbar:nth-child(3){animation-delay:.2s}
+.vbar:nth-child(4){animation-delay:.3s}
+.vbar:nth-child(5){animation-delay:.4s}
+.vbar:nth-child(6){animation-delay:.5s}
+@keyframes vgrow{from{opacity:0;transform:scaleX(.4)}to{opacity:1;transform:none}}
+.b-u{background:var(--acc)}
+.b-h{background:var(--fg3)}
+.b-i{background:repeating-linear-gradient(45deg,var(--fg3) 0 4px,transparent 4px 8px);border:1px solid var(--fg3)}
+.vhead{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--fg);opacity:0}
+.vhead.go{opacity:1;animation:vsweep 4s linear both}
+@keyframes vsweep{to{left:100%}}
+.vlegend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--fg2)}
+.vlegend span{display:inline-flex;align-items:center;gap:6px}
+.vlegend i{width:14px;height:10px;border-radius:3px;display:inline-block}
+.vkeys{display:flex;flex-wrap:wrap;gap:6px;font-size:12.5px;color:var(--fg2)}
+.vkeys span{padding:4px 10px;border-radius:99px;background:var(--panel2)}
+.vkeys span.late{background:var(--warn-s);color:var(--fg)}
+.vmeter{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--fg2);flex-wrap:wrap}
+.vmeter .vbar2{flex:1;min-width:120px}
+.vbar2{height:10px;border-radius:99px;background:var(--panel2);overflow:hidden}
+.vbar2 i{display:block;height:100%;background:var(--o-err);border-radius:99px;transition:width .6s cubic-bezier(.22,.8,.2,1)}
+.vbar2.ok i{background:var(--ok)}
+.vcompare{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.vcompare>div{display:flex;flex-direction:column;gap:6px;padding:12px;border:1px solid var(--line);border-radius:12px}
+.vcompare small{color:var(--fg3)}
+@media (prefers-reduced-motion:reduce){.vmsg,.vqueue li,.vlog li,.vdata,.vnode.hit,.vflow span.step,.vskel i,.vbar,.vhead.go{animation:none!important}.vbar{opacity:1}.vbar2 i{transition:none}}

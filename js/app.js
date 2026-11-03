@@ -119,6 +119,7 @@ function render(id, keepScroll) {
   li.classList.remove('leave');
   if (!keepScroll) reveal(li);
   li.querySelectorAll('pre[data-lang]').forEach(highlight);
+  li.querySelectorAll('.viz[data-viz]').forEach(v => { try { VIZ[v.dataset.viz] && VIZ[v.dataset.viz](v); } catch (e) { console.error(e); } });
   if (L) store.set('last', id);
   try { history.replaceState(null, '', '#' + id); } catch (e) {}
   if (!keepScroll) $('#lesson').scrollTop = 0;
